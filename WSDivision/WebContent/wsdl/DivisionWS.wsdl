@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://ws.utng.edu.mx" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://ws.utng.edu.mx" xmlns:intf="http://ws.utng.edu.mx" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://ws.utng.edu.mx" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getDivisiones">
+    <complexType/>
+   </element>
+   <element name="getDivisionesResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getDivisionesReturn" type="impl:Division"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="Division">
+    <sequence>
+     <element name="abreviatura" nillable="true" type="xsd:string"/>
+     <element name="activo" type="xsd:int"/>
+     <element name="id" type="xsd:int"/>
+     <element name="nombre" nillable="true" type="xsd:string"/>
+     <element name="unidadAcademica" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <element name="getDivisionbyId">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getDivisionbyIdResponse">
+    <complexType>
+     <sequence>
+      <element name="getDivisionbyIdReturn" type="impl:Division"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="updateDivision">
+    <complexType>
+     <sequence>
+      <element name="division" type="impl:Division"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="updateDivisionResponse">
+    <complexType>
+     <sequence>
+      <element name="updateDivisionReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="removeDivision">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="removeDivisionResponse">
+    <complexType>
+     <sequence>
+      <element name="removeDivisionReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addDivision">
+    <complexType>
+     <sequence>
+      <element name="division" type="impl:Division"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addDivisionResponse">
+    <complexType>
+     <sequence>
+      <element name="addDivisionReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="removeDivisionRequest">
+
+      <wsdl:part element="impl:removeDivision" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getDivisionesResponse">
+
+      <wsdl:part element="impl:getDivisionesResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="removeDivisionResponse">
+
+      <wsdl:part element="impl:removeDivisionResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getDivisionbyIdResponse">
+
+      <wsdl:part element="impl:getDivisionbyIdResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getDivisionesRequest">
+
+      <wsdl:part element="impl:getDivisiones" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateDivisionResponse">
+
+      <wsdl:part element="impl:updateDivisionResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addDivisionResponse">
+
+      <wsdl:part element="impl:addDivisionResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateDivisionRequest">
+
+      <wsdl:part element="impl:updateDivision" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getDivisionbyIdRequest">
+
+      <wsdl:part element="impl:getDivisionbyId" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addDivisionRequest">
+
+      <wsdl:part element="impl:addDivision" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="DivisionWS">
+
+      <wsdl:operation name="getDivisiones">
+
+         <wsdl:input message="impl:getDivisionesRequest" name="getDivisionesRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getDivisionesResponse" name="getDivisionesResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getDivisionbyId">
+
+         <wsdl:input message="impl:getDivisionbyIdRequest" name="getDivisionbyIdRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getDivisionbyIdResponse" name="getDivisionbyIdResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updateDivision">
+
+         <wsdl:input message="impl:updateDivisionRequest" name="updateDivisionRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:updateDivisionResponse" name="updateDivisionResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="removeDivision">
+
+         <wsdl:input message="impl:removeDivisionRequest" name="removeDivisionRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:removeDivisionResponse" name="removeDivisionResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addDivision">
+
+         <wsdl:input message="impl:addDivisionRequest" name="addDivisionRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:addDivisionResponse" name="addDivisionResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="DivisionWSSoapBinding" type="impl:DivisionWS">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getDivisiones">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getDivisionesRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getDivisionesResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getDivisionbyId">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getDivisionbyIdRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getDivisionbyIdResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updateDivision">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="updateDivisionRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="updateDivisionResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="removeDivision">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="removeDivisionRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="removeDivisionResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addDivision">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addDivisionRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addDivisionResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="DivisionWSService">
+
+      <wsdl:port binding="impl:DivisionWSSoapBinding" name="DivisionWS">
+
+         <wsdlsoap:address location="http://localhost:8080/WSMovie/services/DivisionWS"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

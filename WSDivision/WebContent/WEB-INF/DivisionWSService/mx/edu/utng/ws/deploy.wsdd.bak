@@ -1,0 +1,48 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from DivisionWSService WSDL service -->
+
+  <service name="DivisionWS" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://ws.utng.edu.mx"/>
+      <parameter name="wsdlServiceElement" value="DivisionWSService"/>
+      <parameter name="schemaQualified" value="http://ws.utng.edu.mx"/>
+      <parameter name="wsdlServicePort" value="DivisionWS"/>
+      <parameter name="className" value="mx.edu.utng.ws.DivisionWSSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="DivisionWS"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="getDivisiones" qname="operNS:getDivisiones" xmlns:operNS="http://ws.utng.edu.mx" returnQName="retNS:getDivisionesReturn" xmlns:retNS="http://ws.utng.edu.mx" returnType="rtns:Division" xmlns:rtns="http://ws.utng.edu.mx" soapAction="" >
+      </operation>
+      <operation name="getDivisionbyId" qname="operNS:getDivisionbyId" xmlns:operNS="http://ws.utng.edu.mx" returnQName="retNS:getDivisionbyIdReturn" xmlns:retNS="http://ws.utng.edu.mx" returnType="rtns:Division" xmlns:rtns="http://ws.utng.edu.mx" soapAction="" >
+        <parameter qname="pns:id" xmlns:pns="http://ws.utng.edu.mx" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="updateDivision" qname="operNS:updateDivision" xmlns:operNS="http://ws.utng.edu.mx" returnQName="retNS:updateDivisionReturn" xmlns:retNS="http://ws.utng.edu.mx" returnType="rtns:int" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:division" xmlns:pns="http://ws.utng.edu.mx" type="tns:Division" xmlns:tns="http://ws.utng.edu.mx"/>
+      </operation>
+      <operation name="removeDivision" qname="operNS:removeDivision" xmlns:operNS="http://ws.utng.edu.mx" returnQName="retNS:removeDivisionReturn" xmlns:retNS="http://ws.utng.edu.mx" returnType="rtns:int" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:id" xmlns:pns="http://ws.utng.edu.mx" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="addDivision" qname="operNS:addDivision" xmlns:operNS="http://ws.utng.edu.mx" returnQName="retNS:addDivisionReturn" xmlns:retNS="http://ws.utng.edu.mx" returnType="rtns:int" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:division" xmlns:pns="http://ws.utng.edu.mx" type="tns:Division" xmlns:tns="http://ws.utng.edu.mx"/>
+      </operation>
+      <parameter name="allowedMethods" value="removeDivision addDivision getDivisiones getDivisionbyId updateDivision"/>
+
+      <typeMapping
+        xmlns:ns="http://ws.utng.edu.mx"
+        qname="ns:Division"
+        type="java:mx.edu.utng.ws.Division"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+</deployment>
