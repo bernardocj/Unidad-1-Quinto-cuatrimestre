@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">WSMovie</string>
+    <string name="modificar">Modificar</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="regresar">Regresar</string>
+    <string name="adultos">Adultos</string>
+    <string name="action_settings">Action settings</string>
+    <string name="name_of_movie">Name of movie</string>
+    <string name="sinopsis">Sinopsis</string>
+    <string name="price">Price</string>
+    <string name="children">Children</string>
+    <string name="adults">Adults</string>
+    <string name="save">Save</string>
+    <string name="list">List</string>
+</resources>

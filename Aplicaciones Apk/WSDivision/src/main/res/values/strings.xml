@@ -1,0 +1,16 @@
+<resources>
+<string name="app_name">WSDivision</string>
+<string name="modificar">Modificar</string>
+<string name="eliminar">Eliminar</string>
+<string name="regresar">Regresar</string>
+<string name="adultos">Adultos</string>
+<string name="action_settings">Action settings</string>
+    <string name="save">Save</string>
+    <string name="list">List</string>
+    <string name="unidad_academica">Unidad Academica</string>
+    <string name="abreviatura">Abreviatura</string>
+    <string name="nomnbre_de_la_division">Nombre de la division</string>
+    <string name="si">Si</string>
+    <string name="no">No</string>
+    <string name="activo_division">Activo</string>
+</resources>

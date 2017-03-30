@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+    android:background="#dfe4a66b"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="casual"
+        android:text="@string/nomnbre_de_la_division"
+        android:textSize="15dp"
+
+        />
+
+    <EditText
+        android:id="@+id/et_nombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/boxColor"
+        android:inputType="text" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="casual"
+        android:text="@string/abreviatura"
+        android:textSize="15dp" />
+
+    <EditText
+        android:id="@+id/et_abreviatura"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/boxColor"
+        android:inputType="text"
+
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="casual"
+        android:text="@string/unidad_academica"
+        android:textSize="15dp" />
+
+    <EditText
+        android:id="@+id/et_unidad_academica"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/boxColor"
+        android:inputType="text" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/activo_division"
+    android:fontFamily="casual"
+    android:textSize="15dp"/>
+
+    <ToggleButton
+        android:id="@+id/toogle_activo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textOff="@string/si"
+        android:textOn="@string/no" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:text="@string/save"
+
+            />
+
+        <Button
+            android:id="@+id/btn_list"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:text="@string/list"
+
+            />
+    </LinearLayout>
+</LinearLayout>
